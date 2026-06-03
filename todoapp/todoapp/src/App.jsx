@@ -21,6 +21,7 @@ function App() {
   }, [todos]);
 
   // Dynamic greeting text based on time
+  //this is the main apperance of the app, it will change based on the time of the day.
   useEffect(() => {
     const hour = new Date().getHours();
     if (hour >= 5 && hour < 12) setGreeting("Let's make today count");
@@ -40,7 +41,7 @@ function App() {
       completed: false, 
       priority: priority,
       dueDate: dueDate,
-      important: currentView === 'important' // Automatically flags as important if added inside important tab
+      important: currentView === 'important' 
     }, ...todos]);
     
     setInputValue('');
@@ -81,12 +82,12 @@ function App() {
   return (
     <div className="app-wrapper">
       
-      {/* Instant Overlay (No Animation) */}
+      {}
       {isSidebarOpen && (
         <div className="overlay" onClick={() => setIsSidebarOpen(false)}></div>
       )}
 
-      {/* Instant Sidebar (No Animation) */}
+      {}
       {isSidebarOpen && (
         <aside className="sidebar">
           <div className="sidebar-header">
@@ -186,7 +187,7 @@ function App() {
           </div>
         </form>
 
-        {/* Tasks View Rendering */}
+        {/* Tasks View*/}
         <div className="task-list">
           {totalCount === 0 ? (
             <div className="empty-state">
